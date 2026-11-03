@@ -1,3 +1,5 @@
+![F1 Kit: purple sunset racing banner with /f1-kit in monospaced lettering](assets/f1-kit-banner.png)
+
 # F1 Kit
 
 **From prompt to a verified pull request.**
