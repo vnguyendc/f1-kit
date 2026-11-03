@@ -26,7 +26,7 @@ def snapshot(root):
 
 
 def copy_package(target):
-    shutil.copytree(ROOT, target, ignore=shutil.ignore_patterns('__pycache__', '*.pyc', '.DS_Store'))
+    shutil.copytree(ROOT, target, ignore=shutil.ignore_patterns('.git', '__pycache__', '*.pyc', '.DS_Store'))
 
 
 class PackageTests(unittest.TestCase):
