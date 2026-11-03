@@ -1,59 +1,110 @@
-# F1
+![F1 Kit: purple sunset racing banner with /f1-kit in monospaced lettering](assets/f1-kit-banner.png)
 
-**Fast laps. Clean handoffs.**
+# F1 Kit
 
-F1 is a small development kit for coding agents. It takes a task from a saved plan through implementation, behavioral verification, and a pull request—with one human approval before building and a clear review of the result afterward.
+**From prompt to a verified pull request.**
 
-The public package is **f1-kit**, and the entry skill is **f1**. It uses a modular entrypoint and playbooks, inspired by pstack's packaging approach. F1's instructions are maintained here; no pstack or third-party skill is bundled.
+Fast laps. Clean handoffs.
 
-## Get started
+F1 gives your coding agent a delivery process: agree on the plan, build within scope, verify real behavior, and open a pull request with evidence you can review.
 
-For Codex, from a local checkout with Bash and Python 3.9+:
+For **GTM engineers and AI builders** shipping automations, internal tools, and product changes with Codex, Claude Code, or Cursor.
+
+[![Validate F1 Kit](https://github.com/vnguyendc/f1-kit/actions/workflows/validate.yml/badge.svg)](https://github.com/vnguyendc/f1-kit/actions/workflows/validate.yml)
+[MIT license](LICENSE)
+
+## Try it
+
+### Codex
+
+Requires Git, Bash, and Python 3.9+ on macOS, Linux, or WSL.
 
 ```bash
+git clone https://github.com/vnguyendc/f1-kit.git
+cd f1-kit
 bash install-codex.sh --check
 bash install-codex.sh
 ```
 
-Then start a new chat and use:
+Start a new chat:
 
 ```text
-$f1 fix the settings form validation. Save a plan for approval first.
+$f1 build a webhook receiver for inbound leads. Verify duplicate deliveries,
+missing fields, and failed downstream requests. Save the plan for approval first.
 ```
 
-See [installation and host support](docs/install.md) for Claude Code, Cursor, temporary profiles, and updates. F1 does not modify global instructions or install background hooks.
-
-## How it works
+### Claude Code
 
 ```text
-Plan → human approval → Build → Verify → Create PR → human review
+/plugin marketplace add vnguyendc/f1-kit
+/plugin install f1-kit@f1-kit
 ```
 
-- **Plan:** clarify requirements, design the smallest change, save a plan with acceptance criteria, and wait for approval.
-- **Build:** implement the approved scope and fix P0/P1 self-review findings.
-- **Verify:** check actual UI, API, or runtime behavior against the requirements. Disclose when the same agent performed both roles.
-- **Deliver:** create the PR, inspect relevant checks and previews, and report what actually happened. Merging and production release require separate authority.
+Then invoke `/f1-kit:f1` with your task. [Full installation guide](docs/install.md) covers local testing, updates, Cursor, and optional default routing.
 
-Only the current role's playbook is loaded. Tracker/wiki integrations and particular models are optional. Existing host, user, and repository instructions still apply.
+## What you get
 
-UI research is proportional: no UI work skips it; minor edits reuse existing patterns without external design searches; substantial UI work researches relevant patterns before approval. Actual UI changes still receive focused rendered review.
+| Stage | What the agent delivers | Your checkpoint |
+| --- | --- | --- |
+| Plan | Requirements, design, bounded tasks, and acceptance criteria in a saved document | Approve the plan |
+| Build | Scoped implementation and self-review, with blocking findings fixed | Agent continues |
+| Verify | Evidence from the affected UI, API, or runtime behavior | Agent continues |
+| Deliver | A pull request, relevant checks, and an honest account of remaining gaps | Review the result |
 
-## Use it
+Plan approval covers implementation, verification, and PR creation. Merging and production release require separate authorization. If one agent builds and verifies, the handoff says so.
+
+## Build the systems your team needs
+
+These are example requests you can bring to F1, not bundled CRM integrations or prebuilt automations:
 
 ```text
-$f1 add CSV export to this table. Preserve the current filters.
-$f1 resume the approved plan in docs/plans/export.md; verify before opening the PR.
-$f1 fix the button spacing using the existing design system.
+$f1 build a CRM sync. Define field ownership, test duplicate and partial records,
+and verify the dry-run output before any live write.
 ```
 
-Read-only requests stay read-only. F1 does not grant permission for unrelated messages, automation, public publication, merges, or production changes.
+```text
+$f1 add an account-enrichment pipeline. Keep source URLs and freshness dates,
+handle missing data, and test with synthetic records before connecting live tools.
+```
 
-## Contribute and validate
+```text
+$f1 fix our conversion-tracking bug. Reproduce it, make the smallest change,
+and verify the emitted events before opening the PR.
+```
 
-The core is [one skill](skills/f1/SKILL.md) with [role playbooks](skills/f1/references/roles/planner.md), a shared contract, and conditional references. Edit the canonical files rather than copying instructions into each host adapter.
+F1 supplies the execution discipline. Your project and authorized tools supply the code, data, and integrations.
+
+## Keep the process proportional
+
+- **No UI work:** no UI research or UI review.
+- **Minor UI edits:** reuse existing patterns, skip external design searches, and check the rendered change.
+- **Substantial UI work:** research the relevant decisions before plan approval, then verify the rendered experience.
+
+Only the current role's playbook and relevant references are loaded. No fixed model, paid design library, tracker, wiki, or subagent framework is required. Explicit research requests and project-specific requirements still apply.
+
+## Host coverage
+
+| Host | Package support | Verification so far |
+| --- | --- | --- |
+| Codex | Self-contained skill and installer | Installer and metadata checks passed in disposable profiles |
+| Claude Code | Native plugin and marketplace metadata | Native validation and isolated install/list/remove passed |
+| Cursor | Agent Plugins manifest and manual skill installation | Structure checked; live session remains untested |
+
+Installer tests and CI do not prove that a model follows every playbook. Live model-task evaluations remain to be run. See [validation details](docs/validation.md).
+
+## How the kit is organized
+
+One [F1 entrypoint](skills/f1/SKILL.md) routes to four focused role playbooks and a shared contract. UI research, preview checks, host translations, and integration guidance are loaded when relevant.
+
+Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack)'s modular packaging approach. F1 contains its own maintained instructions; no pstack or third-party skill is bundled.
+
+## Contribute
 
 ```bash
+python3 scripts/validate.py
 python3 -m unittest discover -s tests -v
 ```
 
-[Host validation details](docs/validation.md) separate package/installer checks from live agent behavior. License: [MIT](LICENSE).
+Try a real task, tell us what failed, or submit a focused improvement. Include the host, version, expected result, and safe evidence. Keep secrets and private data out of issues and examples.
+
+[MIT licensed](LICENSE).
