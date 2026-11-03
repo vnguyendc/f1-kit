@@ -1,0 +1,16 @@
+{
+  "name": "f1-kit",
+  "owner": {
+    "name": "Vinh Nguyen"
+  },
+  "plugins": [
+    {
+      "name": "f1-kit",
+      "source": "./",
+      "description": "Plan, build, verify, and deliver software with clear approval gates and proportional research."
+    }
+  ],
+  "metadata": {
+    "description": "F1 development kit: plan, build, verify, and deliver."
+  }
+}

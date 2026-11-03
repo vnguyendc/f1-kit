@@ -1,0 +1,18 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "f1-kit",
+  "version": "0.1.0",
+  "description": "Plan, build, verify, and deliver software with clear approval gates and proportional research.",
+  "author": {
+    "name": "Vinh Nguyen"
+  },
+  "homepage": "https://github.com/vnguyendc/f1-kit",
+  "repository": "https://github.com/vnguyendc/f1-kit",
+  "license": "MIT",
+  "keywords": [
+    "development",
+    "skills",
+    "verification",
+    "pull-requests"
+  ]
+}

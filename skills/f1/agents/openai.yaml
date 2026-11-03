@@ -1,0 +1,4 @@
+interface:
+  display_name: "F1"
+  short_description: "Plan, build, verify, and deliver with clear approval gates"
+  default_prompt: "Use $f1 to plan this change for approval, then build, verify, and create a pull request."
