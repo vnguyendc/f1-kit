@@ -53,6 +53,22 @@ Then invoke `/f1-kit:f1` with your task. [Full installation guide](docs/install.
 
 Plan approval covers implementation, verification, and PR creation. Merging and production release require separate authorization. If one agent builds and verifies, the handoff says so.
 
+## Continue work without repeating the brief
+
+[F1 Work](skills/f1-work/SKILL.md) is the companion for mixed deliverables and task continuation. It recovers the existing brief, decisions, actual approval, artifact versions, and next action, then selects the relevant available skills. Development still follows F1; plain drafting and research stay within their requested scope.
+
+```text
+$f1-work continue the launch: update the website, finish the carousel,
+and prepare the email using the existing brief and confirmed decisions.
+```
+
+```text
+$f1-work pick up the approved feature on this machine. Check the current
+candidate and artifact access, then resume the next authorized action.
+```
+
+F1 Work keeps related outputs attached to the same initiative and can leave a compact continuation in the existing task record. It does not start other sessions, migrate jobs, send campaigns, or activate automation implicitly. No tracker, wiki, private project skill, or fixed machine is required. Use `$f1` directly for focused development; simple standalone requests need no coordination record.
+
 ## Build the systems your team needs
 
 These are example requests you can bring to F1, not bundled CRM integrations or prebuilt automations:
@@ -90,11 +106,11 @@ Only the current role's playbook and relevant references are loaded. No fixed mo
 | Claude Code | Native plugin and marketplace metadata | Native validation and isolated install/list/remove passed |
 | Cursor | Agent Plugins manifest and manual skill installation | Structure checked; live session remains untested |
 
-Installer tests and CI do not prove that a model follows every playbook. Live model-task evaluations remain to be run. See [validation details](docs/validation.md).
+Installer tests and CI do not prove that a model follows every playbook. F1 Work has been exercised in three independent synthetic model scenarios; installed-host discovery and real project execution remain unverified. See [validation details](docs/validation.md).
 
 ## How the kit is organized
 
-One [F1 entrypoint](skills/f1/SKILL.md) routes to four focused role playbooks and a shared contract. UI research, preview checks, host translations, and integration guidance are loaded when relevant.
+The [F1 development entrypoint](skills/f1/SKILL.md) routes to four focused role playbooks and a shared contract. [F1 Work](skills/f1-work/SKILL.md) adds focused intake/resume guidance and a compact task-record reference. UI research, preview checks, host translations, and integration guidance are loaded when relevant.
 
 Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack)'s modular packaging approach. F1 contains its own maintained instructions; no pstack or third-party skill is bundled.
 

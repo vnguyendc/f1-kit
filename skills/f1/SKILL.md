@@ -7,6 +7,8 @@ description: Run software development from a saved plan and human plan approval 
 
 Fast laps. Clean handoffs.
 
+For a mixed development/content brief or cross-session continuation, [F1 Work](../f1-work/SKILL.md) can recover shared context and choose the relevant workflows. Focused development can start here directly; the development contract and actual approval state remain authoritative.
+
 Read the [shared contract](references/contract.md), recover the task's actual approval and candidate, then load only the current role:
 
 | Stage | Playbook | Outcome |

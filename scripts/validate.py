@@ -6,6 +6,8 @@ import re
 import sys
 
 
+SKILLS = ('f1', 'f1-work')
+
 REQUIRED = (
     'LICENSE', 'README.md', 'plugin.json', '.claude-plugin/plugin.json',
     '.claude-plugin/marketplace.json', 'install-codex.sh',
@@ -20,6 +22,9 @@ REQUIRED = (
     'skills/f1/references/roles/implementer.md',
     'skills/f1/references/roles/verifier.md',
     'skills/f1/references/roles/deployer.md',
+    'skills/f1-work/SKILL.md', 'skills/f1-work/agents/openai.yaml',
+    'skills/f1-work/references/task-record.md',
+    'skills/f1-work/references/examples.md',
 )
 
 
@@ -39,9 +44,10 @@ def validate(root):
         if not (root / name).is_file():
             raise ValueError(f'Incomplete F1 package: missing {name}')
     files = list(package_files(root))
-    entry = (root / 'skills/f1/SKILL.md').read_text()
-    if not re.match(r'\A---\nname: f1\ndescription: [^\n]+\n---\n', entry):
-        raise ValueError('F1 skill frontmatter must contain name and description')
+    for name in SKILLS:
+        entry = (root / 'skills' / name / 'SKILL.md').read_text()
+        if not re.match(rf'\A---\nname: {re.escape(name)}\ndescription: [^\n]+\n---\n', entry):
+            raise ValueError(f'{name} skill frontmatter must contain name and description')
     manifest = json.loads((root / 'plugin.json').read_text())
     if manifest.get('name') != 'f1-kit' or not re.fullmatch(r'\d+\.\d+\.\d+', manifest.get('version', '')):
         raise ValueError('Invalid F1 package name or semantic version')
