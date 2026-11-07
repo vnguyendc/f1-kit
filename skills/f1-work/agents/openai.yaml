@@ -1,0 +1,4 @@
+interface:
+  display_name: "F1 Work"
+  short_description: "Coordinate mixed work and resume tasks with shared context"
+  default_prompt: "Use $f1-work to recover this task's context, choose the relevant workflows, and continue the next authorized action."

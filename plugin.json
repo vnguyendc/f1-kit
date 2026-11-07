@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "f1-kit",
-  "version": "0.1.0",
-  "description": "Plan, build, verify, and deliver software with clear approval gates and proportional research.",
+  "version": "0.2.0",
+  "description": "Coordinate mixed work and deliver verified software with shared context and clear approval gates.",
   "author": {
     "name": "Vinh Nguyen"
   },

@@ -2,6 +2,8 @@
 
 F1 works with a saved plan and a compact task/evidence record. It does not require a tracker, wiki, design library, or external connector.
 
+For mixed deliverables or another session/host, [F1 Work](../../f1-work/SKILL.md) reuses that record and verifies the receiving context. It does not launch sessions or transfer files implicitly, and its continuation packet is not a new approval source.
+
 When the task uses project records, resolve the actual project and available services before drafting updates. Prefer existing records and source-of-truth rules. Include scoped intended writes in the plan; before G1 draft only. After approval, write only authorized task-related updates, preserve concurrent edits, and read back the result. Keep successful writes distinct from pending ones. Never retry an uncertain creation without checking whether it succeeded.
 
 Use whichever tracker/wiki the project actually uses. An available task-steward skill may help, but is optional. Do not create duplicate trackers or require Obsidian or Linear for other projects. An inaccessible optional integration is a limitation, not permission to invent a replacement service or expand scope.
