@@ -19,6 +19,7 @@ Match stable task/issue identifiers and source intent before creating another re
 
 | Requested work | Route |
 | --- | --- |
+| Merge conflicts on an existing PR | [F1 Merge-conflict Resolver](../f1/references/roles/conflict-resolver.md), preserving the current scope and authority |
 | Code, tests, configuration, infrastructure, or related development docs | [F1](../f1/SKILL.md), at the actual current stage |
 | Content, research, campaign assets, analysis, or reporting | The relevant available project or format skill; ordinary drafting does not become a development run |
 | Several dependent outputs | One shared brief and named deliverables; load each specialist only as its output needs it |

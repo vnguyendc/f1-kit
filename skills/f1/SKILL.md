@@ -20,6 +20,10 @@ Read the [shared contract](references/contract.md), recover the task's actual ap
 
 Begin at planning when no approved plan exists. Plan approval authorizes implementation, verification, and PR creation against the established target. Continue without intermediate human gates; a material scope change returns to G1. Read-only questions and research remain within their requested scope and do not require a development run.
 
+## Resolve an existing PR's merge conflicts
+
+For an explicit conflict-resolution request or conflicts encountered during authorized delivery, load the [Merge-conflict Resolver](references/roles/conflict-resolver.md). Recover the PR's scope and approval, reconcile both branches in an isolated worktree, verify the result, and update its source branch. Continue already authorized work without a fresh planning gate; ask only about material ambiguity or missing authority. PR merge and production release remain separate actions.
+
 ## Keep context proportional
 
 Classify UI scope before loading UI procedures or running design searches:
