@@ -69,6 +69,15 @@ candidate and artifact access, then resume the next authorized action.
 
 F1 Work keeps related outputs attached to the same initiative and can leave a compact continuation in the existing task record. It does not start other sessions, migrate jobs, send campaigns, or activate automation implicitly. No tracker, wiki, private project skill, or fixed machine is required. Use `$f1` directly for focused development; simple standalone requests need no coordination record.
 
+## Resolve PR conflicts
+
+```text
+$f1 resolve merge conflicts on <pull-request URL>. Preserve both branches'
+intended behavior, verify the result, and update the PR branch.
+```
+
+The [merge-conflict agent](skills/f1/references/roles/conflict-resolver.md) compares the common ancestor and both branches, follows moved code, and verifies behavior before pushing. It preserves unrelated local work and checks for concurrent branch changes. It updates the existing PR; merging remains your decision. This is an on-demand role, not a background service.
+
 ## Build the systems your team needs
 
 These are example requests you can bring to F1, not bundled CRM integrations or prebuilt automations:
@@ -110,7 +119,7 @@ Installer tests and CI do not prove that a model follows every playbook. F1 Work
 
 ## How the kit is organized
 
-The [F1 development entrypoint](skills/f1/SKILL.md) routes to four focused role playbooks and a shared contract. [F1 Work](skills/f1-work/SKILL.md) adds focused intake/resume guidance and a compact task-record reference. UI research, preview checks, host translations, and integration guidance are loaded when relevant.
+The [F1 development entrypoint](skills/f1/SKILL.md) routes to four delivery role playbooks plus a merge-conflict role and a shared contract. [F1 Work](skills/f1-work/SKILL.md) adds focused intake/resume guidance and a compact task-record reference. UI research, preview checks, host translations, and integration guidance are loaded when relevant.
 
 Inspired by [pstack](https://github.com/cursor/plugins/tree/main/pstack)'s modular packaging approach. F1 contains its own maintained instructions; no pstack or third-party skill is bundled.
 

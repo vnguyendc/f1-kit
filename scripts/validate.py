@@ -22,6 +22,7 @@ REQUIRED = (
     'skills/f1/references/roles/implementer.md',
     'skills/f1/references/roles/verifier.md',
     'skills/f1/references/roles/deployer.md',
+    'skills/f1/references/roles/conflict-resolver.md',
     'skills/f1-work/SKILL.md', 'skills/f1-work/agents/openai.yaml',
     'skills/f1-work/references/task-record.md',
     'skills/f1-work/references/examples.md',

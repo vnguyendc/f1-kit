@@ -15,3 +15,11 @@ The installer and skill files are host-neutral. A successful package check estab
 Report the tested commit/version, host, actual checks, and unverified coverage. Do not equate a successful build/deployment, copied skill, or saved status with correct behavior. Never claim same-agent verification was independent review.
 
 Before a public release, export only this package directory into an empty staging location, validate it there, inspect the inventory, and start a fresh repository history. Private parent-repository files/history are not part of F1.
+
+## Merge-conflict role
+
+Evaluate the [resolver](../skills/f1/references/roles/conflict-resolver.md) with an existing PR and its actual authority. Cover content conflicts, a base-branch extraction with behavior added on the source branch, rename/delete decisions, lockfile regeneration, dirty-work isolation, unchanged reruns, concurrent head/base changes, a fork source branch, unknown mergeability, and missing required verification access. Expect preservation of both compatible requirements, targeted questions for incompatible intent, and no source overwrite, base-branch update, PR merge, or implicit background activation.
+
+The initial implementation was checked with package validation and all seven installer tests, including rejection of a package missing the resolver before writing a profile. A same-agent disposable Git walkthrough reproduced a content conflict, preserved both intended changes and an unrelated draft in the primary checkout, verified two merge parents, confirmed an unchanged rerun made no commit, rejected a stale non-fast-forward push, reconciled the concurrent source change, and confirmed the base ref stayed unchanged. The accompanying real PR resolution exercised the moved-component case: approved pricing behavior was carried into the base branch's extracted guide and verified with tests and rendered browser checks.
+
+These observations establish package integrity and the exercised Git mechanics, not a benchmark of future model behavior. Fork delivery, generated-file resolution, ambiguous product decisions, and automatic role discovery in fresh Codex/Claude/Cursor sessions have not been exercised. No independent reviewer or autonomous background execution is claimed.

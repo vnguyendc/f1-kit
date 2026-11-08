@@ -133,7 +133,7 @@ class PackageTests(unittest.TestCase):
                 self.assertEqual(snapshot(home), {})
 
     def test_invalid_source_write_nothing(self):
-        for defect in ['missing-role', 'missing-companion', 'missing-companion-metadata',
+        for defect in ['missing-role', 'missing-conflict-role', 'missing-companion', 'missing-companion-metadata',
                        'invalid-companion', 'broken-link', 'escaping-link', 'symlink', 'manifest-mismatch']:
             with self.subTest(defect=defect), tempfile.TemporaryDirectory() as temp:
                 base = Path(temp);pkg = base / 'export';copy_package(pkg)
@@ -145,6 +145,8 @@ class PackageTests(unittest.TestCase):
                     (pkg / 'skills/f1-work/agents/openai.yaml').unlink()
                 elif defect == 'invalid-companion':
                     (pkg / 'skills/f1-work/SKILL.md').write_text('invalid entrypoint')
+                elif defect == 'missing-conflict-role':
+                    (pkg / 'skills/f1/references/roles/conflict-resolver.md').unlink()
                 elif defect in ['broken-link', 'escaping-link']:
                     target = 'missing.md' if defect == 'broken-link' else '../outside.md'
                     (base / 'outside.md').write_text('outside package')
