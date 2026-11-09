@@ -10,6 +10,8 @@ For UI code changes, also read the [required UI/UX review](../ui-ux-review.md) a
 
 ## Work
 
+When product outcomes, release scope, or user-facing behavior are still open, or the user asks for product requirements, design, or a development backlog, use [Product Engineering](../product-engineering.md) before finalizing the technical plan. Discovery and design requests stay within their authorized scope.
+
 1. Identify the repository/project, actual request or issue, current behavior, desired outcome, and affected users. Classify the work as feature, bug fix, refactor, maintenance/configuration, documentation/content, investigation, or a justified combination. Distinguish issue type from severity and urgency.
 2. Read applicable instructions and relevant code, tests, history, and current documentation. For a bug, reproduce it when feasible and separate confirmed cause from hypotheses. Research external facts or APIs when needed, using current primary sources. Record what was inspected and what remains unknown.
 3. Triage scope, impact, dependencies, risks, and blockers. Ask about ambiguity that would change requirements, design, public behavior, or the delivery target; continue independent research while awaiting answers.

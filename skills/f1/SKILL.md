@@ -1,6 +1,6 @@
 ---
 name: f1
-description: Run software development from a saved plan and human plan approval through implementation, behavioral verification, and pull request delivery. Use for features, fixes, refactors, tests, configuration, infrastructure, and related docs; resume approved work at its current stage.
+description: Run software development from a saved plan and human plan approval through implementation, behavioral verification, and pull request delivery. Use for product requirements and design, features, fixes, refactors, tests, configuration, infrastructure, and related docs; resume approved work at its current stage.
 ---
 
 # F1

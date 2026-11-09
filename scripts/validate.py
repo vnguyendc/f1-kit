@@ -13,6 +13,7 @@ REQUIRED = (
     '.claude-plugin/marketplace.json', 'install-codex.sh',
     'skills/f1/SKILL.md', 'skills/f1/agents/openai.yaml',
     'skills/f1/references/contract.md', 'skills/f1/references/plan-template.md',
+    'skills/f1/references/product-engineering.md',
     'skills/f1/references/pr-description-template.md',
     'skills/f1/references/design-diagrams.md',
     'skills/f1/references/ui-ux-research.md', 'skills/f1/references/ui-ux-review.md',
