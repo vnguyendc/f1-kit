@@ -53,6 +53,10 @@ Then invoke `/f1-kit:f1` with your task. [Full installation guide](docs/install.
 
 Plan approval covers implementation, verification, and PR creation. Merging and production release require separate authorization. If one agent builds and verifies, the handoff says so.
 
+## Refine product requirements before implementation
+
+Use `$f1` to refine an open product brief, design the important user states, or turn an agreed design into a development backlog. [Product Engineering](skills/f1/references/product-engineering.md) runs within planning and carries the agreed release into the technical plan and its approval.
+
 ## Continue work without repeating the brief
 
 [F1 Work](skills/f1-work/SKILL.md) is the companion for mixed deliverables and task continuation. It recovers the existing brief, decisions, actual approval, artifact versions, and next action, then selects the relevant available skills. Development still follows F1; plain drafting and research stay within their requested scope.
