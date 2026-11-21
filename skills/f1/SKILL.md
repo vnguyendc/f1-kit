@@ -18,7 +18,7 @@ Read the [shared contract](references/contract.md), recover the task's actual ap
 | Verify | [Verifier](references/roles/verifier.md) | Requirement-based behavioral evidence |
 | Deliver | [Deployer](references/roles/deployer.md) | PR and observed checks; G4 human acceptance |
 
-Begin at planning when no approved plan exists. Plan approval authorizes implementation, verification, and PR creation against the established target. Continue without intermediate human gates; a material scope change returns to G1. Read-only questions and research remain within their requested scope and do not require a development run.
+Use a [short plan](references/plan-template.md#short-plan) for bounded work with a settled outcome and approach. If the human explicitly directs a specific fix with a clear scope and target, save or recover that scope and carry the authorization forward. Otherwise begin at planning when no approved plan exists. Plan approval authorizes implementation, verification, and PR creation against the established target. Continue without intermediate human gates; a material scope change returns to G1. Read-only questions and research remain within their requested scope and do not require a development run.
 
 ## Resolve an existing PR's merge conflicts
 

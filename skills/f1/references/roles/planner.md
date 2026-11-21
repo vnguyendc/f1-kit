@@ -12,6 +12,8 @@ For UI code changes, also read the [required UI/UX review](../ui-ux-review.md) a
 
 When product outcomes, release scope, or user-facing behavior are still open, or the user asks for product requirements, design, or a development backlog, use [Product Engineering](../product-engineering.md) before finalizing the technical plan. Discovery and design requests stay within their authorized scope.
 
+For a bounded change with a settled outcome and approach, use the [short plan](../plan-template.md#short-plan) in place of steps 4–6. Continue with target selection, saving the plan, and G1 below.
+
 1. Identify the repository/project, actual request or issue, current behavior, desired outcome, and affected users. Classify the work as feature, bug fix, refactor, maintenance/configuration, documentation/content, investigation, or a justified combination. Distinguish issue type from severity and urgency.
 2. Read applicable instructions and relevant code, tests, history, and current documentation. For a bug, reproduce it when feasible and separate confirmed cause from hypotheses. Research external facts or APIs when needed, using current primary sources. Record what was inspected and what remains unknown.
 3. Triage scope, impact, dependencies, risks, and blockers. Ask about ambiguity that would change requirements, design, public behavior, or the delivery target; continue independent research while awaiting answers.
@@ -25,7 +27,7 @@ Planning may write the planning document, run read-only diagnostics, and perform
 
 ## Required planning document
 
-Use the [planning document template](../plan-template.md), adapting it to the project's existing format. Always include these sections, with detail proportional to the task:
+For the full plan, use the [planning document template](../plan-template.md#full-plan) and cover these sections:
 
 - Problem statement: the current behavior or unmet need, affected users, impact, and evidence for why this work is needed. Distinguish known facts from assumptions; do not restate a requested implementation as the problem.
 - Proposed solution overview: a concise, plain-language explanation of the intended behavior and high-level approach, why it addresses the problem, and the scope of the change. Keep implementation details in Design.
@@ -36,10 +38,10 @@ Use the [planning document template](../plan-template.md), adapting it to the pr
 - Task breakdown: ordered, bounded tasks with dependencies, likely files, requirement IDs, and verification seams.
 - Validation and delivery: test strategy, workspace/revision, PR target, required checks, and known CI/preview effects.
 
-Problem statement, proposed solution overview, visual overview, requirements, design, and task breakdown are mandatory even for a small task. For a small change, focus one annotated view on the changed interface, surrounding components, and relevant boundary case; cross-system work may need multiple views. Record a plan revision so approval refers to a specific document version. Keep secrets and sensitive records out of the document and its visuals.
+For either format, record a plan revision so approval refers to a specific version. Keep secrets and sensitive records out of the document and its visuals.
 
 ## G1 handoff
 
-Link the saved planning document and lead with the problem and proposed solution overview, pointing the reader to its visual overview. Summarize the issue classification and triage, research evidence, requirements/acceptance criteria, design and tradeoffs, ordered tasks, test strategy, assumptions, and blockers. Identify the document revision, proposed implementation workspace/branch, and PR target.
+Link the saved plan and identify its revision, implementation workspace/branch, and PR target. For a short plan, the four bullets are the handoff. For a full plan, summarize the proposed design, tradeoffs, evidence, and any open decisions.
 
-Ask the human to approve this plan through implementation, verification, and PR creation, request revisions, or stop. End the turn. A draft plan with unresolved material requirements remains blocked rather than approved for implementation.
+If the human has explicitly directed the specific fix and its scope and target are clear, record that instruction and continue within its authority. Otherwise, present the new plan for G1 and await approval. Resolve material scope changes with the human.

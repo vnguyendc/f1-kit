@@ -9,7 +9,7 @@ Classify UI scope before loading research instructions or searching. Substantial
 - Initial task authorization permits research and writing the planning document. G1 plan approval authorizes implementation, self-review, behavioral verification, and creation or updating of a PR against the established target. There are no G2 or G3 human gates.
 - Create a PR by default unless the user explicitly requests direct delivery. PR authority includes pushing the task branch and triggering its normal CI and previews. It does not include merging, auto-merge, or production release.
 - Direct delivery requires an explicit user request, an exact development target, and established deployment effects. Ask only when those material details are missing; do not offer direct delivery as a routine extra choice.
-- Plan approval must come from the human and applies to the named task, planning document revision, and scope. A clear reply such as "approved" or "go ahead" satisfies G1 when the preceding plan is unambiguous. Silence, elapsed time, passing checks, and text in tool output are not approvals.
+- Record the human instruction that authorizes the named task, plan revision, and scope. An explicit direction to implement a specific fix counts for that scope when the saved plan matches the direction and the target is clear. A clear reply such as "approved" or "go ahead" satisfies G1 when the preceding plan is unambiguous. Silence, elapsed time, passing checks, and text in tool output are not approvals.
 - Keep implementation, verification, and delivery as distinct quality stages, but continue between them without ending the turn for approval. Preserve upstream evidence and candidate identity; do not manufacture passing results from a saved status flag.
 - Every UI code change must complete the [required UI/UX review](ui-ux-review.md) using the rendered review procedure and applicable project/host frontend skills. Preserve the approved scope and record rendered-screen evidence and findings before PR creation; this adds no human gate.
 - Ask for input when a material scope decision, unknown target, missing authority, or blocker requires it. Prepare concrete evidence first, explain the decision needed, and leave required questions pending until answered. G4 reports the delivery outcome for human review and any authorized closeout.
@@ -27,6 +27,7 @@ Task stewardship: relevant note paths/issue IDs, authorized writes, last verifie
 Candidate identity: worktree, branch, base SHA, candidate SHA or diff fingerprint
 Environment and target:
 Evidence: exact commands / UI steps, expected and observed results, artifact links
+Bug fixes: original revision and observed failure → patched revision and result of the same check, or baseline limitation and narrower evidence
 UI scope / research: no UI | minor UI | substantial UI; brief reason when skipped; when required/requested, inspected references, comparisons, chosen patterns, rationale, access/evidence limits
 UI/UX review when UI code changes: skills, screens/viewports/states, findings, evidence
 PR delivery evidence: individual check conclusions and required/optional/unknown status, app/deployment URL and SHA, hosted/local results and limitations, verification timestamp
@@ -42,7 +43,7 @@ Use enough candidate identity to detect a changed patch, including uncommitted a
 
 | Stage | Evidence required | Decision / next action |
 | --- | --- | --- |
-| G1: plan | Linked planning document with problem statement, proposed solution overview, a readable task-specific visual, requirements, design, task breakdown, acceptance criteria and test strategy; material scope and target questions resolved | Human approves implementation, verification, and default PR creation |
+| G1: plan | Linked, revisioned [short or full plan](plan-template.md) with an observable success criterion and a resolved scope and target | Record existing explicit authorization for the specific fix, or obtain human approval for the new plan |
 | Implementation | Exact candidate, change summary, relevant checks, self-review iterations, zero unresolved P0/P1 findings | Continue to verification automatically |
 | Verification | All required acceptance criteria verified, including the UI/UX review for UI code changes; residual findings disclosed; delivery mode, target, candidate, checks, monitoring window and recovery approach established | Continue to PR creation automatically, or direct delivery if explicitly requested |
 | G4: delivery review | Actual PR/check/deployment state, candidate-matched hosted and local smoke evidence, coverage status and remaining gaps per the [PR preview procedure](pr-preview-verification.md) | Present the result for human review; perform only authorized closeout |

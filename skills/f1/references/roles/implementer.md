@@ -8,9 +8,15 @@ For every UI code change, apply applicable project/host frontend guidance and th
 
 ## Implement
 
-1. Recover the approved planning document, requirements, task breakdown, workspace, and actual human approval. Read repository instructions. Use an isolated worktree when required, preserve unrelated changes, and record the base revision.
-2. Implement the smallest complete change for the approved tasks. For a bug, add a meaningful reproducing regression test where practical. For other work, add/update tests proportional to the behavior and risk. Do not add tests that merely copy implementation details.
+1. Recover the saved plan, scope, workspace, and actual human authorization under G1. Read repository instructions. Use an isolated worktree when required, preserve unrelated changes, and record the base revision.
+2. Implement the smallest complete change for the approved tasks. Add or update behavioral tests proportional to the change. For bug fixes, capture the before-and-after evidence below.
 3. Run focused checks and the required package/repository checks. Separate introduced failures from demonstrated baseline failures; an unexplained required-check failure prevents a ready handoff.
+
+## Bug-fix evidence
+
+Before changing product code, use a reproducing regression test where practical or a repeatable interaction through the affected interface. Run it on the original revision and confirm it fails for the reported reason. Reuse a planning reproduction when its revision and scenario match.
+
+After the fix, rerun the same check with the same inputs. Record both revisions and observed results. If safe baseline reproduction is unavailable, record why and what narrower behavior you verified.
 
 ## Self-review and fix loop
 
