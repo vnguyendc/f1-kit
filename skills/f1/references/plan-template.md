@@ -1,6 +1,19 @@
 # Planning Document Template
 
-Adapt this structure to the project's existing plan format. Replace the prompts with task-specific content. Keep small plans concise, but retain the problem statement, proposed solution overview, visual overview, requirements, design, and task breakdown. The solution and visual overviews should make sense before reading technical details. Every plan needs a meaningful visual, including small and non-UI tasks.
+## Short plan
+
+Use this version for a bounded change with a settled outcome and approach. Save the plan with its revision and delivery target. Aim for one screen.
+
+- **Current behavior.** What happens today?
+- **Desired behavior.** What should the user or caller observe?
+- **Scope.** What will change?
+- **Verification.** Which test or interaction will demonstrate success? For a bug, identify the check to run before and after the fix.
+
+Include a diagram when it clarifies the change. Include any applicable UI review in verification.
+
+## Full plan
+
+Use the following structure when the work involves material design choices, dependencies, or scope decisions. Adapt it to the project's existing format.
 
 ````markdown
 # <Task title>
